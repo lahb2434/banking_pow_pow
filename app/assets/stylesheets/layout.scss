@@ -1,0 +1,39 @@
+body {
+    background-image: url(image-path('pittsburgh_bridge_background.jpeg'));
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0px;
+    height:1500px;
+  }
+
+#site-header-container {
+  overflow: hidden;
+  background-color: rgba(75, 72, 72, 0.705);
+  position: relative;
+  top: 0;
+  width: 100%;
+  margin-bottom: 50px;
+  border-bottom: 5px solid rgb(230, 169, 74); 
+}
+
+ #site-header-container .sccu-logo {
+   display: inline-block;
+   color: transparent;
+   overflow: hidden;
+   width: 200px;
+   height: 100px;
+   background-image: url(image-path('steel_city_credit_union.png'));
+   background-repeat: no-repeat;
+   background-size: contain;
+   margin-left: 20px;
+}
+
+// #site-header-container .menu-items ul {
+//   display: flex;
+//   height: 100%;
+//   margin: 0;
+//   padding: 0;
+//   list-style: none;
+// }
+
+ 

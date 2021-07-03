@@ -1,0 +1,79 @@
+
+.session-main {
+    display:flex;
+    margin: 0 auto;
+    height: auto; 
+     
+}
+
+.session-dashboard {
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 75%;
+    height: 100%;
+    overflow: visible;
+    background-color: rgba(145, 139, 139, 0.911);
+    
+  }
+
+  .session-dashboard input, .register, .facebook {
+  width: 98%;
+  padding: 12px 20px;
+  margin: 8px 10px 8px 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;   
+}
+
+.session-dashboard .register {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(239, 239, 239);
+}
+.session-dashboard .register:link {
+   color: rgb(5, 5, 5); text-decoration: none;
+}
+.session-dashboard .register:visited {
+  color: rgb(3, 3, 3); text-decoration:none;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .separator:not(:empty)::before {
+    margin-right: .25em;
+  }
+  
+  .separator:not(:empty)::after {
+    margin-left: .25em;
+  }
+
+.facebook {
+    background-color: rgb(34, 110, 241);
+    margin: 8px 10px 8px 10px;
+    height: auto;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    
+}
+.facebook a {
+    color: white;
+    text-decoration: none;
+}
+.facebook img {
+    height:35px;
+    image-rendering: crisp-edges;
+}
