@@ -1,0 +1,13 @@
+<%= form_for User.new do |f| %>
+
+ <%= f.text_field :first_name, placeholder: 'first name' %>
+
+ <%= f.text_field :last_name, placeholder: 'last name' %>
+ <%= f.email_field :email, placeholder: 'email' %>
+ <%= f.telephone_field :telephone_number, placeholder: 'phone number' %>
+ <%= f.date_field :birth_date, placeholder: 'birthdate' %>
+ <%= f.text_field :user_name, placeholder: 'username' %>
+ <%= f.password_field :password, placeholder: 'password' %>
+ <%= f.password_field :password_confirmation, placeholder: 'confirm password' %>
+ <%= f.submit 'Register Now!! woo!!' %>
+<% end %>

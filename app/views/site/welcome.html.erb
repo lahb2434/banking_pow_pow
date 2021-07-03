@@ -1,0 +1,25 @@
+
+<div class="session-main"> 
+  <div class="session-dashboard">
+      <%= form_with do |f| %>
+        <%#=f.label :name, "Name"%>
+        <%=f.text_field :name, placeholder: "Name"%>
+        <%#=f.label :password, "password"%>
+        <%=f.password_field :password, placeholder: "password"%>
+        <%=f.submit "Log in", disable_with: 'Submiting...'%>  
+      <% end %>
+      <%= link_to "Register", new_user_path, class: 'register' %>
+      <div class="separator">or</div>
+      <div class="facebook">
+        <%= link_to "Sign in with Facebook", '/auth/facebook', method: :post %>
+      </div>
+  </div>
+</div>
+
+<%
+=begin%>
+ image_tag("Facebook-logo.png") 
+<%
+=end%>
+  
+  
