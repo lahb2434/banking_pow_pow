@@ -1,0 +1,26 @@
+<% if @user.errors.any? %>
+    <div id="error_explanation">
+      <p> <%=pluralize(@user.errors.count, "error") %> on this form</p>
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+
+    </div>
+  <% end %>
+
+<div class="sign-up">
+
+  <%= form_with(model: @user, local: true) do |f| %>
+   <%= f.text_field :first_name, placeholder: 'first name' %>
+   <%= f.text_field :last_name, placeholder: 'last name' %>
+   <%= f.email_field :email, placeholder: 'email' %>
+   <%= f.telephone_field :telephone_number, placeholder: 'phone number' %>
+   <%= f.text_field :birth_date, placeholder: 'birthdate' %>
+   <%= f.text_field :user_name, placeholder: 'username' %>
+   <%= f.password_field :password, placeholder: 'password' %>
+   <%= f.password_field :password_confirmation, placeholder: 'confirm password' %>
+   <%= f.submit 'Register Now!! woo!!' %>
+  <% end %>
+</div>
