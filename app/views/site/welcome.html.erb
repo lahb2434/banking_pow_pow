@@ -1,24 +1,27 @@
 
-<div class="session-main"> 
-  <div class="session-dashboard">
-      <%= form_with do |f| %>
+
+    <p class="notice"><%= notice %></p>
+      <%= form_with url: '/sessions' do |f| %>
         <%#=f.label :name, "Name"%>
-        <%=f.text_field :name, placeholder: "Name"%>
+        <%=f.text_field :user_name, placeholder: "user name"%>
         <%#=f.label :password, "password"%>
         <%=f.password_field :password, placeholder: "password"%>
         <%=f.submit "Log in", disable_with: 'Submiting...'%>  
       <% end %>
       <%= link_to "Register", new_user_path, class: 'register' %>
       <div class="separator">or</div>
-      <div class="facebook">
-        <%= link_to "Sign in with Facebook", '/auth/facebook', method: :post %>
-      </div>
+      
+         <%= button_to "Login with Facebook", user_facebook_omniauth_authorize_path, {class: "facebook"} %>
+        <%#= link_to'Log in with Facebook!', '/auth/facebook', {method: :post} %>
+      
   </div>
 </div>
 
 <%
 =begin%>
- image_tag("Facebook-logo.png") 
+ image_tag("Facebook-logo.png")
+ , {controller: :sessions, action: :create}, method: :post 
+ url: url_for(controller: :sessions, action: :create), method: :post
 <%
 =end%>
   
