@@ -1,6 +1,51 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.sign-up, #error_explanation {
+    margin: 0 auto;
+    width: 435px;
+    height: auto;
+    background-color: rgba(75, 72, 72, 0.835);
+    border-radius: 5px;
+    padding-bottom: 10px;
+}
+
+
+.sign-up input[type=submit] {
+   display: block; 
+   margin: 0 auto;
+   background-color: rgb(206, 206, 206);
+     
+}
+
+.sign-up input {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    margin: 1em;
+    width: 87%;   
+}
+
+#error_explanation {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-bottom: 5px;
+}
+
+#error_explanation li, p {
+    color: red;
+     
+    padding-right: 1em;  
+}
+
+#error_explanation p {
+    padding-left: 1em;
+}
+
+
+//-------------------- Users/show -----------------
+
 // body {
 //     color: black;
 //     // background: black;
@@ -15,44 +60,38 @@
 //    a:hover {
 //      text-decoration:underline;
 //    }
-    
-//    .dashboardd {
-//      display:block;
-//      margin: 0 auto;
-//      width: 75%;
-//      height:auto;
-//      overflow: visible;
-//    }
+   
 
+   .user-show-dashboard .right-box {    
+       width:100%;
+       margin: 0 auto;
+       padding: 3px 0px 3px 7px;
+       border-radius: 10px;
+       color: black;
+       border: 1px solid rgb(0, 0, 0);
+
+   }
    
-//    .dashboard .right-box {    
-//        width:100%;
-//        margin: 0 auto;
-//        padding: 3px 0px 3px 7px;
-//        border-radius: 10px;
-//        color: black;
-//    }
+   .right-box .right-box-options {
+     margin: 1%;
+     width: auto;
+     border: 1px solid #c3c3c3;
+     border-radius: 10px;
+     display: flex;
+   }
    
-//    .right-box .right-box-options {
-//      margin: 1%;
-//      width: auto;
-//      border: 1px solid #c3c3c3;
-//      border-radius: 10px;
-//      display: flex;
-//    }
-   
-//    .right-box-options div {
-//      height: auto;
-//      padding-right: 5px;
-//      padding-left: 5px;
+   .right-box-options div {
+     height: auto;
+     padding-right: 5px;
+     padding-left: 5px;
      
-//      }
+     }
      
-//     .right-box-options .option-top {
-//       border-radius: 9px 0px 0px 9px;
-//       background-color: lightgrey;
-//       width: 35%;
-//       display:flex;
-//       justify-content: center;
-//       align-items: center;
-//       }
+    .right-box-options .option-top {
+      border-radius: 9px 0px 0px 9px;
+      background-color: lightgrey;
+      width: 35%;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      }
