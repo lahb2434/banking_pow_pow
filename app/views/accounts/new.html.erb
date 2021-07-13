@@ -1,26 +1,36 @@
-<% if @user.errors.any? %>
+
+ <% if @account.errors.any? %>
     <div id="error_explanation">
-      <p> <%=pluralize(@user.errors.count, "error") %> on this form</p>
+      <p> <%=pluralize(@account.errors.count, "error") %> on this form</p>
       <ul>
-      <% @user.errors.full_messages.each do |message| %>
+      <% @account.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
-
     </div>
+  <% end %> 
+
+  <p class="apply">Apply for a new account</p>
+
+  <%= form_with(url: user_accounts_path, local: true, class: 'acc_form') do |f| %>
+  <% if params[:account_name].present? %>
+
+    <%= f.label :account_name, "Loan Account" %>
+
+   
+    <%= f.text_field :balance, placeholder: 'Loan Request Amount e.g. 10,000.00' %>
+
+    <%= f.hidden_field :name, value: params[:account_name] %>
+  <% else %>
+    <%= f.label :name, "Account Type" %>
+    <%= f.select(:name, ['checking','savings'], :prompt => 'Select') %>
+ 
+    <%= f.label :balance, "Initial Deposit" %>
+    <%= f.text_field :balance, placeholder: 'e.g. 10,000.00' %>
   <% end %>
 
-<div class="sign-up">
+   <%= f.hidden_field :user_id, value: params[:user_id] %>
+   
+   <%= f.submit params[:account_name].present? ? 'Apply for Loan' : 'Create Account' %>
 
-  <%= form_with(model: @user, local: true) do |f| %>
-   <%= f.text_field :first_name, placeholder: 'first name' %>
-   <%= f.text_field :last_name, placeholder: 'last name' %>
-   <%= f.email_field :email, placeholder: 'email' %>
-   <%= f.telephone_field :telephone_number, placeholder: 'phone number' %>
-   <%= f.text_field :birth_date, placeholder: 'birthdate' %>
-   <%= f.text_field :user_name, placeholder: 'username' %>
-   <%= f.password_field :password, placeholder: 'password' %>
-   <%= f.password_field :password_confirmation, placeholder: 'confirm password' %>
-   <%= f.submit 'Register Now!! woo!!' %>
   <% end %>
-</div>

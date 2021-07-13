@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
     has_many :accounts
     has_many :cards, through: :accounts
-    has_many :credit_cards, class_name: :Card, as: :owner
+    has_many :credit_cards, class_name: :Card, as: :card_owner
     has_many :owned_merch, class_name: :Merchandise, as: :owner
     has_many :merchandises, through: :accounts
 
@@ -20,11 +20,6 @@ class User < ApplicationRecord
     validates :email, 
     format: { with: URI::MailTo::EMAIL_REGEXP } 
 
-    # validates :telephone_number, 
-    # format: { with: /(?=.{10,})/ },
-    # uniqueness: true
-
-    # validates :birth_date #presence: true
     validate :age
 
     validates :user_name, 

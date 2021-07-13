@@ -1,0 +1,19 @@
+<div class="card_info">
+<p><%= first_name(@card)%></p>
+</div>
+
+<div class="card_container">
+  <%= image_tag "credit_card.png", class: "bank_card"  %>
+   <div class="card_type">
+     <p><%= @card.card_type %></p>
+   </div>
+   <div class="card_number">
+     <p><%= @card.card_number %></p>
+    </div>
+    <div class="name">
+      <p><%= card_owner_name(@card) %></p>
+    </div>
+    <div class="expiration">
+      <p><%= @card.expiration %></p>
+    </div>
+</div>

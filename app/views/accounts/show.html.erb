@@ -1,1 +1,24 @@
-
+<div class="account show_account">
+  <div class="account_name show_name">
+    <%= "#{@account.name.to_s.capitalize}" %>
+  </div>
+  <div class="show_balance">
+    <div class="card">
+      <p>balance</p>
+      <%= "$ #{number_with_precision(@account.balance, precision: 2),  :delimiter => ','}" %>
+    </div> 
+    <div class="card">
+    <% if @account.cards.empty? %>
+      <p>click to activate card</p>
+      <%= link_to image_tag('credit_card.svg',class: 'credit_card_link'), new_card_path(account_id:  @account.id)%>
+    <% else %>
+    <p><%= @account.cards.first.card_type %> Card</p>
+      <%= link_to image_tag('credit_card.svg',class: 'credit_card_link'), account_card_path(@account)%>
+    <% end %>
+    </div>
+    <div class="yield">
+     <p><%= @account.annual_percentage_yield.nil? ? 'Annual Percentage Rate' : 'Annual Percentage Yield' %></p>
+     <p><%=@account.annual_percentage_yield || @account.annual_percentage_rate %>%</p>
+    </div>
+  </div>
+</div>

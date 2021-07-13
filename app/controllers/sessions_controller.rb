@@ -16,7 +16,8 @@ class SessionsController < ApplicationController
       return redirect_to root_path, notice: 'wrong login id or password' unless @user.present? && @user.authenticate(params[:password])
     end
     session[:user_id] = @user.id
-    redirect_to @user
+   
+    redirect_to user_accounts_path(@user)
   end
 
   def logout

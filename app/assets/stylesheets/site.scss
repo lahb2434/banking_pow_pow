@@ -1,5 +1,5 @@
 
-  .session-dashboard input, .register, .facebook {
+  .dashboard input, .register, .facebook {
   width: 98%;
   padding: 12px 20px;
   margin: 5px auto;
@@ -7,28 +7,29 @@
   border-radius: 5px;
   box-sizing: border-box;   
 }
-.session-dashboard form {
+.dashboard form {
   width: 100%;
   display:flex; 
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 
 
-.session-dashboard input[type=submit] {
+.dashboard input[type=submit] {
   cursor: pointer;
 }
 
-.session-dashboard .register {
+.dashboard .register {
   font-size: 14px;
   display: flex;
   justify-content: center;
   background-color: rgb(239, 239, 239);
 }
-.session-dashboard .register:link {
+.dashboard a:link {
    color: rgb(5, 5, 5); text-decoration: none;
 }
-.session-dashboard .register:visited {
+.dashboard a:visited {
   color: rgb(3, 3, 3); text-decoration:none;
 }
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_06_003007) do
+ActiveRecord::Schema.define(version: 2021_07_02_122251) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "name"
@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 2021_07_06_003007) do
 
   create_table "cards", force: :cascade do |t|
     t.string "card_number"
-    t.string "type"
-    t.boolean "credit_card", default: false
+    t.string "card_type"
+    t.string "expiration"
     t.float "annual_percentage_rate"
     t.float "balance"
     t.integer "card_owner_id"
@@ -52,11 +52,11 @@ ActiveRecord::Schema.define(version: 2021_07_06_003007) do
     t.string "email"
     t.string "telephone_number"
     t.date "birth_date"
+    t.string "uid"
+    t.string "provider"
     t.boolean "admin", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "provider"
-    t.string "uid"
   end
 
 end

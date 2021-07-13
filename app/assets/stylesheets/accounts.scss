@@ -1,100 +1,94 @@
+.dashboard input, select {
+    width: 98%;
+    padding: 12px 20px;
+    margin: 5px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;   
+  }
+  .dashboard form {
+    width: 100%;
+    display:flex; 
+    flex-wrap: wrap;
+  }
 
-// .dashboard {
-//     margin: auto;
-//     width: 75%;
-//     height: 1500px;
-//     border: 3px solid #73AD21;
-//     background-color: rgb(241, 233, 233);
-//     display: flex;
-// }
+  p.apply, .acc_form label, .user_accounts p {
+    padding-left: 1em;
+  }
 
-// .dashboard #header {
-//     position: relative;
-//     height: 50px;
-//     border: 3px solid #ad212d;
-//     width: 100%;
-//     margin: 0px;
-   
-// } 
-
-// div#header {
-//     margin-top: 90%;
-//     text-align: left;
-// }
-
-// body {
-//   color: white;
-//   background: black;
-//  }
- 
-// a:link {
-//   color: white; text-decoration: none;
-// }
-// a:visited {
-//   color: red; text-decoration:none;
-// }
-// a:hover {
-//   text-decoration:underline;
-// }
- 
-// .dashboard {
-//   display:flex;
-//   margin: 0 auto;
-//   width: 400px;
-//   height:auto;
-//   overflow: visible;
-// }
-
-// .dashboard .left-box {
-//   position: relative;
-//   width: 15%;
-//   height: 100%;
-//   display: flex;
-//   flex-direction: column;  
-// }
-   
-// .left-box div {
-//   width: 50px;
-//   height: 50px;
-//   margin: 2px;
-//   border-radius: 25px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// .left-box .left-box-options {
-//   background-color: white;
-// }
-
-// .dashboard .right-box {    
-//   width:100%;
-//   margin: 2px;
-//   padding: 3px 0px 0px 7px;
-//   border-radius: 10px;
-//   color: black;
-// }
-
-// .right-box .right-box-options {
-//   margin: 5px;
-//   width: 75%;
-//   border: 1px solid #c3c3c3;
-//   border-radius: 10px;
-//   display: flex;
-// }
-
-// .right-box-options div {
-//   height: auto;
-//   padding-right: 5px;
-//   padding-left: 5px;
+  //-----------user account---------
   
-// }
+  .user_account {    
+    width:100%;
+    margin: 0 auto;
+    padding: 3px 0px 3px 7px;
+    border-radius: 10px;
+    color: black;
+    border: 1px solid rgb(0, 0, 0);
+    height:auto;
+}
+
+.account {
+  border: 1px solid #c3c3c3;
+  border-radius: 10px;
+  display: flex;
+  width: auto;
+  margin: 15px 5px;
+  height: auto;
+}
+
+.account div {
+  height: 5em;
+  padding-right: 5px;
+  padding-left: 5px;
   
-// .right-box-options .option-top {
-//    border-radius: 9px 0px 0px 9px;
-//    background-color: lightgrey;
-//    width: 35%;
-//    display:flex;
-//    justify-content: center;
-//    align-items: center;
-// }
+  }
+  
+ .account_name {
+   border-radius: 9px 0px 0px 9px;
+   background-color: lightgrey;
+   width: 35%;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   }
+
+   .account_balance {
+   background-color: whitesmoke;  
+   border-radius: 0px 9px 9px 0px;
+   width: 65%;
+   display:flex;
+   flex-direction: column;
+ }
+
+ .account_balance p {
+   padding-left: 0;
+ }
+
+ //----------Account Show----------
+ .show_account{
+  flex-direction: column;
+ }
+ 
+ .show_account div {
+   height:auto;
+ }
+
+.show_name {
+  height: 3em;
+  border-radius: 9px 9px 0px 0px;
+  width: auto;
+}
+
+.show_balance {
+  height: auto;
+  width: auto;
+  border-radius: 0px 0px 9px 9px ;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: whitesmoke;  
+}
+.credit_card_link{
+  width: 50px;
+}

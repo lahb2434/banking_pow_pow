@@ -1,14 +1,22 @@
 class AccountsController < ApplicationController
   before_action :set_account, only: %i[show edit update destroy]
 
+  def index 
+    redirect_to root_path, notice: 'something went wrong' unless @user = User.find_by(id: params[:user_id])
+  end
+
   def show
+    return redirect_to user_path, notice: 'something went wrong' unless @user = User.find_by(id: params[:user_id])  
+    redirect_to user_path, notice: 'something went wrong' unless @account = @user.accounts.find_by(id: params[:id])
   end
 
   def new
+    @account = Account.new
   end
 
   def create
-    acc = user.accounts.build(name: params)
+    user = User.find(account_params[:user_id])
+    acc = user.accounts.build(name: account_params[:name])
     acc.tap do |a|
        case a.name
        when 'checking'
@@ -18,19 +26,20 @@ class AccountsController < ApplicationController
        when 'loan'
          a.annual_percentag_rate = 0.3
        end
-     a.balance = params[:balance]
+     a.balance = account_params[:balance].gsub(',','')
      end
+     acc.save 
+     redirect_to user_accounts_path
   end
 
   private
 
   def set_account
-    @user = User.find(params[:id])
+    @account = Account.find(params[:id])
   end
   
   def account_params
-    params.require(:account).permit(
-      )
+    params.permit(:name, :balance, :user_id)
   end
   
 end

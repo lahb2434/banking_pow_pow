@@ -1,0 +1,31 @@
+<div class="card_info">
+<p> </p>
+</div>
+
+<div class="card_container">
+  <%= image_tag "credit_card.png", class: "bank_card"  %>
+   <div class="card_type">
+     <p><%= @type = !!@account ? 'Debit' : 'Credit' %></p>
+   </div>
+   <div class="card_number">
+     <p><%= @card_number = []; 16.times{@card_number<<rand(9)}; @card_number = @card_number.join %></p>
+    </div>
+    <div class="name">
+      <p><%= user = User.find(session[:user_id]); "#{user.first_name} #{user.last_name}" %></p>
+    </div>
+    <div class="expiration">
+      <p><%= @expiration = 2.years.from_now.strftime('%m/%y') %></p>
+    </div>
+</div>
+
+ <%= form_with model: @card do |f| %>
+    <%= f.hidden_field :card_type, value: @type  %>
+    <%= f.hidden_field :card_number, value: @card_number  %>
+    <%= f.hidden_field :expiration, value: @expiration  %>
+    <%= f.hidden_field :account_id, value: @account.id if @account.present? %>
+  
+    <%= f.submit "Activate Card", disable_with: 'Activating Card...' %>
+<% end %> 
+
+
+

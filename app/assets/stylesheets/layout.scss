@@ -1,10 +1,10 @@
 body {
-    // background-image: url(image-path('pittsburgh_bridge_background.jpeg'));
+    background-image: url(image-path('pittsburgh_bridge_background.jpeg'));
     background-attachment: fixed;
     background-size: cover;
     margin: 0px;
     height:1500px;
-    overflow: hidden;
+    overflow: visible;
   }
 
 #site-header-container {
@@ -50,6 +50,13 @@ body {
   overflow: visible;
   background-color: rgba(145, 139, 139, 0.911);
   padding-bottom: 2vw;  
+}
+
+.dashboard a:link {
+  color: rgb(5, 5, 5); text-decoration: none;
+}
+.dashboard a:visited {
+ color: rgb(3, 3, 3); text-decoration:none;
 }
 
  
