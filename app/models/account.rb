@@ -5,7 +5,7 @@ class Account < ApplicationRecord
     has_many :cards, as: :card_owner
 
     has_many :merchandises
-    has_many :users, through: :merchandises
+    has_many :loanees, through: :merchandises, source: :user
     
     scope :loans, -> { where(name: :loan) }
     scope :saving_and_checking, -> { where('name = ? or name = ?', 'checking', 'savings')}

@@ -11,8 +11,8 @@ class User < ApplicationRecord
     has_many :credit_cards, class_name: :Card, as: :card_owner
     has_many :owned_merch, class_name: :Merchandise, as: :owner
 
-    has_many :merchandises
-    has_many :accounts, through: :merchandises
+    has_many :merchandises  
+    has_many :loans, through: :merchandises, source: :account
 
     validates :first_name, 
     presence: true, 
