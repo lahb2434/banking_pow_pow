@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show] do
     resources :accounts, only: [:new, :create, :index, :show]
     resources :cards, only: [:show]
+    get '/total_debt', to: 'site#total_debt'
   end
 
   resources :accounts do
@@ -13,11 +14,10 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:create]
 
-  
+  get '/logout', to: 'sessions#logout'
   
   get '/welcome', to: 'site#welcome'
   
-
   get '/users/auth/facebook/callback' => 'sessions#create'
 
   devise_for :users

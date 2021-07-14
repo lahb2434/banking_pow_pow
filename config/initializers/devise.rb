@@ -1,6 +1,6 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
-
+Devise.setup do |config|
     # # The secret key used by Devise. Devise uses this key to generate
     # # random tokens. Changing this key will render invalid all existing
     # # confirmation, reset password and unlock tokens in the database.
@@ -242,7 +242,7 @@
     # # config.navigational_formats = ['*/*', :html]
   
     # # The default HTTP method used to sign out a resource. Default is :delete.
-    # config.sign_out_via = :delete
+    config.sign_out_via = :delete
   
     # # ==> OmniAuth
     # # Add a new OmniAuth provider. Check the wiki for more information on setting
@@ -272,7 +272,7 @@
     # # so you need to do it manually. For the users scope, it would be:
     # # config.omniauth_path_prefix = '/my_engine/users/auth'
 
-Devise.setup do |config|
+
     require 'devise/orm/active_record'
     config.omniauth :facebook, "828004947832501", "3ac9a4f52cda0ad04e7745593e8a3f35", callback_url: "http://localhost:3000/users/auth/facebook/callback"
 end

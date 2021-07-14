@@ -5,16 +5,23 @@
   <div class="show_balance">
     <div class="card">
       <p>balance</p>
-      <%= "$ #{number_with_precision(@account.balance, precision: 2),  :delimiter => ','}" %>
+      <p><%= "$ #{number_with_precision(@account.balance, precision: 2)}" %></p>
     </div> 
     <div class="card">
-    <% if @account.cards.empty? %>
-      <p>click to activate card</p>
-      <%= link_to image_tag('credit_card.svg',class: 'credit_card_link'), new_card_path(account_id:  @account.id)%>
-    <% else %>
-    <p><%= @account.cards.first.card_type %> Card</p>
-      <%= link_to image_tag('credit_card.svg',class: 'credit_card_link'), account_card_path(@account)%>
-    <% end %>
+    <% case @account.name %>
+    <% when 'Checking' %>
+      <% if @account.cards.empty? %>
+        <p>click to activate card</p>
+        <%= link_to image_tag('credit_card.svg',class: 'credit_card_link'), new_card_path(account_id:  @account.id)%>
+      <% else %>
+      <p><%= @account.cards.first.card_type %> Card</p>
+        <%= link_to image_tag('credit_card.svg',class: 'credit_card_link'), account_card_path(@account)%>
+      <% end %>
+    <% when 'Loan' %>
+      <p><%= link_to "make a payment", edit_account_path, class: "account_button" %></p>
+    <% when 'savings' %>
+      <p><%= link_to "Transfer", edit_account_path, class: "account_button" %></p>
+    <%end%>
     </div>
     <div class="yield">
      <p><%= @account.annual_percentage_yield.nil? ? 'Annual Percentage Rate' : 'Annual Percentage Yield' %></p>

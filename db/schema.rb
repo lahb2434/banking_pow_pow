@@ -40,8 +40,12 @@ ActiveRecord::Schema.define(version: 2021_07_02_122251) do
     t.float "price"
     t.integer "owner_id"
     t.string "owner_type"
+    t.integer "user_id"
+    t.integer "account_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_merchandises_on_account_id"
+    t.index ["user_id"], name: "index_merchandises_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

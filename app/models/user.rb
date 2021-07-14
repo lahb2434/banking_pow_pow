@@ -3,11 +3,16 @@ class User < ApplicationRecord
 
     devise :omniauthable, omniauth_providers: %i[facebook]
 
-    has_many :accounts
+    has_many :accounts, -> {  Account.saving_and_checking } #for encapsulation
+    validates_presence_of :team, if: :team_id_present?
+    
     has_many :cards, through: :accounts
+
     has_many :credit_cards, class_name: :Card, as: :card_owner
     has_many :owned_merch, class_name: :Merchandise, as: :owner
-    has_many :merchandises, through: :accounts
+
+    has_many :merchandises
+    has_many :accounts, through: :merchandises
 
     validates :first_name, 
     presence: true, 

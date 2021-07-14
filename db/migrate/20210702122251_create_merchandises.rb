@@ -5,6 +5,8 @@ class CreateMerchandises < ActiveRecord::Migration[6.1]
       t.float :price 
       t.integer :owner_id
       t.string :owner_type
+      t.belongs_to :user  
+      t.belongs_to :account
 
       t.timestamps
     end

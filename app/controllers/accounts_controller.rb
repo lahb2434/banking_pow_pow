@@ -24,12 +24,19 @@ class AccountsController < ApplicationController
        when 'savings'
          a.annual_percentage_yield = 1.5
        when 'loan'
-         a.annual_percentag_rate = 0.3
+         a.annual_percentage_rate = 0.3
+         a.user_id = nil
        end
      a.balance = account_params[:balance].gsub(',','')
      end
      acc.save 
      redirect_to user_accounts_path
+  end
+
+  def edit 
+  end
+
+  def update 
   end
 
   private
