@@ -1,3 +1,38 @@
 // Place all the styles related to the merchandise controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+    height:1000px;
+    background:
+      linear-gradient(rgb(9, 93, 119), transparent),
+      linear-gradient(to top left, rgb(26, 34, 155), transparent),
+      linear-gradient(to top right, rgb(72, 235, 235), transparent);
+    background-blend-mode: screen;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.merch_container {
+    width: auto;
+    margin:0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border: gray solid 3px ;
+}
+
+.merch_description {
+     width: 30%;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.merch_purchase_options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.merch_purchase_options button {
+    
+}

@@ -5,13 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-<Merchandise id: nil, name: nil, price: nil, owner_id: nil, owner_type: nil, created_at: nil, updated_at: ni
 
-Merchandise.create([
-    {name: 'House', price: 200000},
+Merchandise.create([{name: 'House', price: 200000},
     {name: 'Car', price: 40000},
-    {name: 'Boat', price: 35000}
-    {name: 'ATV', price: 15000}
-    {name: 'Designer Dog Breed', price: 2500}
-    {name: 'Candy Bar', price: 1}
-    ])
+    {name: 'Boat', price: 35000},
+    {name: 'ATV', price: 15000},
+    {name: 'Designer Dog Breed', price: 2500},
+    {name: 'Candy Bar', price: 1}])

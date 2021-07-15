@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   
   get '/welcome', to: 'site#welcome'
   
+  get '/store', to: 'merchandise#show'
   get '/users/auth/facebook/callback' => 'sessions#create'
 
   devise_for :users

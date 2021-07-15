@@ -4,7 +4,6 @@ class User < ApplicationRecord
     devise :omniauthable, omniauth_providers: %i[facebook]
 
     has_many :accounts, -> {  Account.saving_and_checking } #for encapsulation
-    validates_presence_of :team, if: :team_id_present?
     
     has_many :cards, through: :accounts
 
