@@ -30,9 +30,34 @@ body {
 .merch_purchase_options {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    position: absolute;
+    left: 65%;
 }
 
+.merch_purchase_options a {
+    font: 14px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #000000;
+  padding: 2px 6px 2px 6px;
+  border: 1px solid #696969;
+  border-radius: 3px;
+ 
+}
 .merch_purchase_options button {
-    
+  margin: 2px;
+}
+
+.form-popup {
+  display: none;
+  position: absolute;
+  border: 3px solid #f1f1f1;
+  background-color: rgb(124, 133, 133);
+}
+
+.form-container {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
 }

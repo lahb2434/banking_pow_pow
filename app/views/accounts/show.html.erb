@@ -5,7 +5,7 @@
   <div class="show_balance">
     <div class="card">
       <p>balance</p>
-      <p><%= "$ #{number_with_precision(@account.balance, precision: 2)}" %></p>
+      <p>$<%= number_with_precision(@account.balance, precision: 2) %></p>
     </div> 
     <div class="card">
     <% case @account.name %>

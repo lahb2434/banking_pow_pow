@@ -1,7 +1,7 @@
 class MerchandiseController < ApplicationController
     
 
-    def show 
+    def store
         render layout: 'merchandise'
     end
 
