@@ -2,7 +2,12 @@ class MerchandiseController < ApplicationController
     
 
     def store
-        render layout: 'merchandise'
+        @merchandise = Merchandise.new
     end
+
+    def create
+        byebug
+    end
+    
 
 end

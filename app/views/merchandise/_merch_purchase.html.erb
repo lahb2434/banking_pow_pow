@@ -1,0 +1,15 @@
+<div class="merch_container">
+  <div class="merch_description">
+    <p> <%= name %></p>
+    <p>priced at only $ <%= formatted_balance(price) %></p>
+  </div>
+  <div class="merch_purchase_options">
+    <button class="open-button" onclick="openForm()">Pay with Debit Card</button>
+      <%= render 'form', name: name, price: price %>
+  
+    <button class="open-button" onclick="openForm()">Pay with Credit Card</button>
+      <%= render 'form', name: name, price: price %>  
+
+    <%= link_to "Apply for Loan", pay_for_merch_path(merchandise: {name: name, price: price}) %>
+  </div>
+</div>

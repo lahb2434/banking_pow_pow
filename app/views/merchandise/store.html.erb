@@ -1,22 +1,13 @@
-<div class="merch_container">
-  <div class="merch_description">
-    <p>Buy a new <%= name = "House" %></p>
-    <p>priced at only $ <%= formatted_balance(balance = 200000) %></p>
-  </div>
-<div class="merch_purchase_options">
-<button class="open-button" onclick="openForm()">Debit Card</button>
- <div class="form-popup" id="myForm">
-  <%= form_with class: "form-container" do |f| %>
-    <%= f.button "Close", type: 'button', class: "btn cancel", onclick: "closeForm()" %>
 
-    <%= f.label :card_number, "card number" %>
-    <%= f.text_field :card_number, placeholder: '0000000000000000' %>
-    
-    <%= f.submit "Purchase", disable_with: 'Purchasing...' %>
-   
-  <% end %>
-</div> 
 
+  <%= render partial: 'merch_purchase', locals: {name: 'House', price: '200000'}  %>
+  <%= render partial: 'merch_purchase', locals: {name: 'Boat', price: '80000'}  %>
+  <%= render partial: 'merch_purchase', locals: {name: 'Car', price: '40000'}  %>
+  <%= render partial: 'merch_purchase', locals: {name: 'ATV', price: '15000'}  %>
+  <%= render partial: 'merch_purchase', locals: {name: 'Candy Bar', price: '2'}  %>
+
+
+</div>
 
 <script>
 function openForm() {
@@ -27,10 +18,3 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
 </script>
-    <button>buy with credit card</button>
-    <button>apply for loan</button>
-  </div>
-</div>
-
-<%= store_greeting('house', '2000') %> 
-<%# render partial in merchandise folder with passed in params from hash i guess %>
