@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   get '/welcome', to: 'site#welcome'
   
   get '/store', to: 'merchandise#store'
+
+  get '/pay_for_merch', to: 'merchandise#new'
+
+  post '/store', to: 'merchandise#create'
   
   get '/users/auth/facebook/callback' => 'sessions#create'
 
