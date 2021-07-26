@@ -1,0 +1,25 @@
+<div class="loan_application_container">
+
+  <%= form_with model: @merch, class: "loan_application" do |f| %>
+  
+    <h3>Merchandise</h3>   
+    <h2><%= params[:merchandise][:name] %></h2>
+
+    <h3>Loan Applicant</h3>   
+    <h2><%= "#{@user.first_name}  #{@user.last_name}" %></h2>
+
+    <h3>Loan Amount</h3>  
+    <h2>$<%= formatted_balance(params[:merchandise][:price]) %></h2>
+
+    <%= f.hidden_field :name, value: params[:merchandise][:name] %> 
+  
+    <%= f.hidden_field :price, value: params[:merchandise][:price] %>
+  
+    <%= f.hidden_field :account_name, value: params[:account_name] %>
+    
+    <%= f.submit "Apply" %>
+  <%end%>
+
+</div>
+
+
