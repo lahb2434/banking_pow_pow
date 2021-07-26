@@ -11,6 +11,10 @@ class Account < ApplicationRecord
     scope :saving_and_checking, -> { where('name = ? or name = ?', 'checking', 'savings')}
     scope :added_up, lambda { where("name = ?", 'loan').sum(:balance)}
 
+    def name_with_balance
+      "#{name} $#{ApplicationController.helpers.formatted_balance(balance)}"
+    end
+
     private
       def user_id_present?
         user_id.present?
