@@ -1,0 +1,17 @@
+<p>Make Payment to Card</p>
+
+<%= form_with url: user_card_path, method: "patch"  do |f| %>
+
+<p>amount</p>
+  
+  <%= f.number_field :payment_amount, max: @card.balance, value: formatted_balance(@card.balance)  %>
+<p>Card</p>
+  <%= f.text_field :card_number, value: @card.card_number, disabled: true %>
+
+<p>from</p>
+
+  <%= f.collection_select(:account_id, @user.accounts.where(name: ['savings', 'checking']).order(name: :asc), :id, :name_with_balance) %>
+  <%= f.hidden_field :user_id, value: @user.id %>
+
+  <%= f.submit "Make Payment" %>
+<% end %>
