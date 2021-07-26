@@ -11,14 +11,21 @@
   <header>
  
   <div id="site-header-container" class="container">
-    <a href="/" class="sccu-logo-link">
+    <% if session[:user_id].present? %>
+      <a href="<%= user_accounts_path(session[:user_id]) %>" class="sccu-logo-link">
+    <%else%>
+      <a href="<%= root_path %>" class="sccu-logo-link">
+    <%end%>
       <div class="sccu-logo">
         SCCU 
       </div>
     </a>
-    <%#= link_to "Profile", user_path %>
-    <%#= link_to "text", model %>
-    <%#= link_to "Total Debt", user_total_debt_path %>
+    
+    <div class="header-options">
+        <%= link_to "Logout", logout_path unless current_page?('/') %>
+    </div>
+    
+    
   </div> 
 
   </header>
