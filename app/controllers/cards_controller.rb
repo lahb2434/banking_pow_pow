@@ -1,6 +1,5 @@
 class CardsController < ApplicationController
-  before_action :set_account, only: %i[show]
-  before_action :logged_in?
+  before_action :set_card, only: %i[show edit update]
 
     def show 
     end
@@ -27,9 +26,26 @@ class CardsController < ApplicationController
       end
     end
 
+    def edit 
+      @user = User.find(params[:user_id])
+    end
+
+    def update 
+      @account = User.find(params[:user_id]).accounts.find(params[:account_id])
+      if params[:payment_amount]
+        @card.balance -= params[:payment_amount].to_f
+        @card.save
+        @account.balance -= params[:payment_amount].to_f 
+        @account.save
+      end 
+      @card.balance += params[:purchase_amount].to_f if params[:purchase_amount]
+      @card.save 
+      redirect_to @card
+    end
+
     private
 
-    def set_account
+    def set_card
       @card = Card.find(params[:id])
     end
 
@@ -37,8 +53,7 @@ class CardsController < ApplicationController
       params.require(:card).permit(:card_type, :card_number, :expiration)
     end
 
-    def logged_in?
-      session[:user_id]
+    def card_params_for_update_action
+      params.require(:card).permit(:balance)
     end
- 
 end

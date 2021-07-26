@@ -1,9 +1,7 @@
 class SiteController < ApplicationController
+  skip_before_action :signed_in?, only: [:welcome]
 
   def welcome 
-  end
-
-  def home
   end
 
   def total_debt #make view for this thing
