@@ -1,37 +1,11 @@
-<div class="user_accounts"%>
-   <p><%=@user.first_name%>'s Accounts</p>
+<div class="user_accounts">
+   <p><%=@user.first_name.pluralize%> Accounts</p>
    
-   <% @user.accounts.each do |acc| %>
-   <div class="account">
-      <div class="account_name">
-        <%=link_to "#{acc.name.to_s.capitalize}", user_account_path(@user, acc) %>
-      </div>
-      <div class="account_balance">
-        <div class="card">
-          <p>balance</p>
-          <% num = number_with_precision(acc.balance, precision: 2) %>
-          <%= "$ #{number_with_delimiter(num, :delimiter => ',')}" %>
-        </div> 
-      </div>
-   </div>     
-   <% end %>
+    <%= render partial: 'account', locals: {collection: @user.accounts} %>
+    <%= render partial: 'account', locals: {collection: @user.credit_cards} %>
+    <%= render partial: 'account', locals: {collection: @user.loans} %>
 
-   <% @user.credit_cards.each do |card| %>
-   <div class="account">
-      <div class="account_name">
-        <%=link_to "#{card.card_type} Card", user_card_path(@user, card) %>
-      </div>
-      <div class="account_balance">
-        <div class="card">
-          <p>balance</p>
-          <%= "$ #{number_with_precision(card.balance, precision: 2, delimiter: ',')}" %>
-        </div> 
-      </div>
-   </div>     
-   <% end %>    
-  
 </div>
 
 <%= link_to 'Create Account', new_user_account_path(@user), class: 'register' %>
 <%= link_to 'Apply for Credit Card', new_card_path, class: 'register' %>
-<%= link_to 'Apply for Loan', new_user_account_path(@user, :account_name => 'loan'), class: 'register' %>
