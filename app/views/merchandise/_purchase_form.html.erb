@@ -1,0 +1,21 @@
+<div class="form-popup" id="myForm">
+
+  <%= form_with url: store_path, class: "form-container" do |f| %>
+    <p>Purchase <%=name%> </p>
+    <%= f.label :card_number, "first name" %>
+    <%= f.text_field :first_name, placeholder: 'John' %>
+
+    <%= f.label :last_name, "last name" %>
+    <%= f.text_field :last_name, placeholder: 'Doe' %>
+
+    <%= f.label :card_number, "card number" %>
+    <%= f.text_field :card_number, placeholder: '0000000000000000' %>
+    
+    <%= f.hidden_field :name, value: name %>
+    <%= f.hidden_field :price, value: price %>
+
+    <%= f.submit "Purchase" %>
+   
+  <% end %>
+</div> 
+
