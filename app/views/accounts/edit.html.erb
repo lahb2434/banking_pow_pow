@@ -1,1 +1,18 @@
-<%= @account.attributes %>
+<p><%= @account.name == 'savings' ? "Make a Transfer" : "Make a Payment" %></p>
+
+<%= form_with url: user_account_path, method: "patch"  do |f| %>
+
+<p>amount</p>
+  
+  <%= f.number_field :payment_amount, value: formatted_balance(@account.balance)  %>
+
+<p>to <%=@account.name.capitalize%> Account</p>
+
+  <%= f.collection_select :pay_to_account_id, @account.name == 'loan' ? @user.loans : @user.accounts, :id, :name_with_balance, prompt: true, selected: @account.id %>
+
+<p>from</p>
+
+  <%= f.collection_select(:pay_from_account_id, @user.accounts.where(name: ['savings', 'checking']).order(name: :asc), :id, :name_with_balance) %>
+
+  <%= f.submit "Make Payment" %>
+<% end %>
