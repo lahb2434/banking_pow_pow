@@ -274,5 +274,5 @@ Devise.setup do |config|
 
 
     require 'devise/orm/active_record'
-    config.omniauth :facebook, "828004947832501", "3ac9a4f52cda0ad04e7745593e8a3f35", callback_url: "http://localhost:3000/users/auth/facebook/callback"
+    config.omniauth :facebook, Rails.application.credentials.facebook[:key], Rails.application.credentials.facebook[:secret], callback_url: "http://localhost:3000/users/auth/facebook/callback"
 end

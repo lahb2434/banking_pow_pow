@@ -1,4 +1,15 @@
-<% @user.owned_merch.each do |merch| %>
-  <%=merch.name %>
-<%end%>
+<div class="user_container">
+<h3><%= user_name(@user) %></h3>
+<h4>Accounts</h4>
+<%=user_accounts(@user)%>
+<h4>Credit Cards</h4>
+<%= user_credit_cards(@user) %>
+<h4>Merchandises through Loans Account</h4>
+<%= user_loans(@user) %>
+<h4>Owned Merch</h4>
+<%= user_merch(@user) %>
+</div>
+
+
+
 
