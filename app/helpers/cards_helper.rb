@@ -13,4 +13,12 @@ module CardsHelper
     "#{owner.first_name} #{owner.last_name}"
   end
 
+  def pay_balance_link(card)
+    link_to "make a payment", edit_user_card_path(@user, card), class: 'card_payment' if card.balance > 0
+  end
+
+  def name_with_balance
+    "#{:name} #{:balance}"
+  end
+
 end
