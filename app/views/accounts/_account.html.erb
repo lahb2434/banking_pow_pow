@@ -1,0 +1,19 @@
+<% if collection.any? %>
+  <% collection.each do |a| %>
+     <div class="account">
+        <div class="account_name">
+          <% if a[:name].present? %>
+            <%=link_to "#{a.name.capitalize}", user_account_path(@user, a) %>
+          <% else %>
+            <%=link_to "#{a.card_type} Card", user_card_path(@user, a) %>
+          <% end %>
+        </div>
+        <div class="account_balance">
+          <div class="card">
+            <p>balance</p>
+            <%= "#{number_to_currency(a.balance)}" %>
+          </div> 
+        </div>
+     </div>     
+  <% end %>
+<% end %> 
