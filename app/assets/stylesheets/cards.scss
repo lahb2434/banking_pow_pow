@@ -40,3 +40,12 @@
   right: 20%;
 }
 
+.card_payment {
+  background-color: white;
+}
+
+input[type="text"][disabled] {
+  color: rgb(0, 0, 0);
+  background-color: lightgrey;
+}
+

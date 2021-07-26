@@ -12,7 +12,7 @@
     flex-wrap: wrap;
   }
 
-  p.apply, .acc_form label, .user_accounts p {
+  p.apply, .acc_form label, .user_accounts p, p {
     padding-left: 1em;
   }
 
@@ -91,6 +91,7 @@
 }
 .credit_card_link{
   width: 50px;
+  padding-left: 25%
 }
 
 .account_button {
