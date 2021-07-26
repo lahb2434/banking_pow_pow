@@ -1,20 +1,6 @@
-
-
-  <%= render partial: 'merch_purchase', locals: {name: 'House', price: '200000'}  %>
-  <%= render partial: 'merch_purchase', locals: {name: 'Boat', price: '80000'}  %>
-  <%= render partial: 'merch_purchase', locals: {name: 'Car', price: '40000'}  %>
-  <%= render partial: 'merch_purchase', locals: {name: 'ATV', price: '15000'}  %>
-  <%= render partial: 'merch_purchase', locals: {name: 'Candy Bar', price: '2'}  %>
-
-
-</div>
-
-<script>
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
-
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
-</script>
+  <% store.each do |merch| %>
+    <%= render partial: 'merch_purchase', locals: {name: merch[:name], price: merch[:price]}  %>
+  <% end %>
+  
+  
+  
