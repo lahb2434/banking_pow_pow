@@ -2,6 +2,7 @@
   <div class="account_name show_name">
     <%= "#{@account.name.to_s.capitalize}" %>
   </div>
+  
   <div class="show_balance">
     <div class="card">
       <p>balance</p>
@@ -9,7 +10,7 @@
     </div> 
     <div class="card">
     <% case @account.name %>
-    <% when 'Checking' %>
+    <% when 'checking' %>
       <% if @account.cards.empty? %>
         <p>click to activate card</p>
         <%= link_to image_tag('credit_card.svg',class: 'credit_card_link'), new_card_path(account_id:  @account.id)%>
@@ -17,10 +18,10 @@
       <p><%= @account.cards.first.card_type %> Card</p>
         <%= link_to image_tag('credit_card.svg',class: 'credit_card_link'), account_card_path(@account)%>
       <% end %>
-    <% when 'Loan' %>
-      <p><%= link_to "make a payment", edit_account_path, class: "account_button" %></p>
+    <% when 'loan' %>
+      <p><%= link_to "make a payment", edit_user_account_path(@user, @account), class: "account_button" %></p>
     <% when 'savings' %>
-      <p><%= link_to "Transfer", edit_account_path, class: "account_button" %></p>
+      <p><%= link_to "Transfer", edit_user_account_path(@user, @account), class: "account_button" %></p>
     <%end%>
     </div>
     <div class="yield">
