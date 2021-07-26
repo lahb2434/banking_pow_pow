@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show] do
-    resources :accounts, only: [:new, :create, :index, :show]
-    resources :cards, only: [:show]
+    resources :accounts, only: [:new, :create, :index, :show, :edit, :update]
+    resources :cards, only: [:show, :edit, :update]
     get '/total_debt', to: 'site#total_debt'
   end
 
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get '/store', to: 'merchandise#store'
 
   get '/pay_for_merch', to: 'merchandise#new'
+  post '/pay_for_merch', to: 'merchandise#create'
 
   post '/store', to: 'merchandise#create'
   
