@@ -1,5 +1,5 @@
 <div class="card_info">
-<p><%= first_name(@card)%></p>
+<h3><%= first_name(@card)%></h3>
 </div>
 
 <div class="card_container">
@@ -16,4 +16,9 @@
     <div class="expiration">
       <p><%= @card.expiration %></p>
     </div>
+</div>
+
+<div class="card_info">
+  <h3>Card Balance $<%= formatted_balance(@card.balance)%></h3>
+  <h3><%= pay_balance_link(@card) %></h3>
 </div>
