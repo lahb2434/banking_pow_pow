@@ -35,6 +35,9 @@ facebook:
 # Used as the base secret for all MessageVerifiers in Rails, including the one protecting cookies.
 secret_key_base: ...
 ```
+
+Under Settings and Basic you will find App ID and App Secret listed at the top insert as shown in the example.
+
 Save and exit editor.
 
 ### Server
