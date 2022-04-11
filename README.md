@@ -36,7 +36,7 @@ facebook:
 secret_key_base: ...
 ```
 
-Under Settings and Basic you will find App ID and App Secret listed at the top insert as shown in the example.
+Under your Facebook App Settings and Basic you will find App ID and App Secret listed at the top, insert as shown in the example.
 
 Save and exit editor.
 
